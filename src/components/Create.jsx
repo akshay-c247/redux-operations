@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 const Create = () => {
 
 const [user,setUsers]=useState({})
+const [isdisable,setIsDisable]=useState(true)
 
 const dispatch=useDispatch();
 const navigate=useNavigate();
@@ -30,16 +31,16 @@ const handleSubmit =(e)=>{
     <form className='w-50 mx-auto my-5' onSubmit={handleSubmit} >
   <div className="mb-3">
     <label  className="form-label">Name</label>
-    <input type="text" className="form-control" name='name' onChange={getUserData}/>
+    <input placeholder='Name' type="text" className="form-control" name='name' onChange={getUserData}/>
    
   </div>
   <div className="mb-3">
     <label  className="form-label">Email</label>
-    <input type="email" className="form-control" name='email'onChange={getUserData}/>
+    <input placeholder='Email' type="email" className="form-control" name='email'onChange={getUserData}/>
   </div>
   <div className="mb-3">
     <label  className="form-label">age</label>
-    <input type="age" className="form-control" name='age'onChange={getUserData} />
+    <input placeholder='age' type="age" className="form-control" name='age'onChange={getUserData} />
   </div>
   <div className="mb-3">
   <input className="form-check-input" type="radio" name='gender' value='Male' onChange={getUserData} />
@@ -55,7 +56,7 @@ const handleSubmit =(e)=>{
 </div>
 
 
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="btn btn-primary" disabled={isdisable}>Submit</button>
 </form>
 
     
