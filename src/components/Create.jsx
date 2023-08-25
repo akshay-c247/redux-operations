@@ -15,7 +15,6 @@ const navigate=useNavigate();
 const getUserData=(e)=>{
    
     setUsers({...user,[e.target.name]:e.target.value});
-    
 }
  
 const handleSubmit =(e)=>{
